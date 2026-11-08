@@ -1,0 +1,15 @@
+workflows:
+  jvc-glass-tv-debug:
+    name: JVC Glass TV APK
+    max_build_duration: 60
+    instance_type: linux_x2
+    environment:
+      vars:
+        PACKAGE_NAME: "com.example.jvcglasstv"
+    scripts:
+      - name: Build Android APK
+        script: |
+          gradle --version
+          gradle --no-daemon assembleDebug
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk

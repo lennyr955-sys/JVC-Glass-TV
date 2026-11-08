@@ -1,0 +1,21 @@
+COMPILAR EL APK SIN INSTALAR ANDROID STUDIO
+
+La opción preparada es Codemagic (compilación Android en la nube).
+Sitio: https://codemagic.io/
+
+IMPORTANTE: Codemagic necesita que el proyecto esté en un repositorio GitHub/GitLab/Bitbucket. No se instala Android Studio en la PC, pero sí hay que crear/conectar una cuenta.
+
+Pasos:
+1. Crear/iniciar sesión en GitHub: https://github.com/
+2. Crear un repositorio nuevo, por ejemplo JVC-Glass-TV.
+3. Subir el CONTENIDO de esta carpeta al repositorio (no subir el ZIP como un único archivo; subir los archivos y carpetas del proyecto).
+4. Abrir https://codemagic.io/ e iniciar sesión.
+5. Add application > GitHub > autorizar Codemagic y elegir el repositorio JVC-Glass-TV.
+6. Elegir Android/Native Android si pregunta el tipo de proyecto.
+7. Iniciar un build usando codemagic.yaml.
+8. Si termina correctamente, abrir Artifacts y descargar el APK debug.
+
+La configuración codemagic.yaml usa Gradle en la máquina de compilación y guarda el APK de app/build/outputs/apk/debug/.
+
+Este build de prueba puede instalarse para probar la interfaz; no es una publicación de Play Store.
+No deshabilita ni elimina el launcher original de Android TV.
